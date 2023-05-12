@@ -1,0 +1,27 @@
+
+.like-area{
+    width: max-content;
+    display: flex;
+    background-color: #eee;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.channel-area{
+    padding: 10px;
+}
+
+.channel-area:hover{
+    border-radius: 25px ;
+    background-color: #ccc;
+}
+// .channel-area .youtube:hover{
+//         color: red;
+//         padding: 0;
+//     }
+    .channelCount{
+        font-size: 14px;
+        font-weight: bold;
+        border-right: solid #ccc;
+        border-width: thin;
+        padding: 4px;
+    }

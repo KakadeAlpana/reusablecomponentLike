@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 my-2" *ngFor="let reel of reelArray">
+      <div class="card">
+        <div class="card-header">{{reel.title}}</div>
+        <!-- <div class="card-body">{{reel.href}}</div> -->
+        <div class="card-body">
+          <video width="320" height="240" controls>
+            <source src="https://www.youtube.com/watch?v=uMPGyTUMv0Q" type="video/mp4">
+            <source src="https://www.youtube.com/watch?v=uMPGyTUMv0Q" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="card-footer">
+          <p class="d-flex "><app-liked [isLike]='reel.isLiked' (getLikedCount)="getCountlike($event ,reel.id)"></app-liked>  <span class="ml-2">{{reel.likedCount}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 mb-3" *ngFor="let channel of channelArray">
+      <div class="card">
+        <div class="card-header">
+          {{channel.title}}
+        </div>
+        <div class="card-body">
+          <video width="100%" height="240" controls>
+            <source src="https://youtu.be/sGxmLYOL_kg" type="video/mp4">
+          </video>
+        </div>
+        <div class="card-footer">
+          <div class="like-area">
+            <div class="channel-area">
+              <app-youtube-like class="youtube" [channelliked]="channel.channelLiked" (getChannelLiked)="sendChannelLiked($event,channel.id)"></app-youtube-like>
+              <span class="channelCount"> {{channel.likeYouChannel}}</span>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
